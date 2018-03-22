@@ -15,5 +15,4 @@ public class CamelRoute extends RouteBuilder {
                 .setBody(constant("Hello from Camel"))
                 .to("activemq:foo");
     }
-
 }

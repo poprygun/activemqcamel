@@ -26,15 +26,15 @@ public class Run implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments applicationArguments) throws Exception {
-        log.info("Spring Boot Embedded ActiveMQ Configuration Example");
+        log.info("Spring Boot Embedded ActiveMQ Configuration Example.");
 
-        for (int i = 0; i < 5; i++){
+//        for (int i = 0; i < 5; i++){
 //            Order myMessage = new Order(i + " - Sending JMS Message using Embedded activeMQ", new Date());
 //            jmsTemplate.convertAndSend("foo", "Sending from a queue.... " + i);
 //            orderSender.send(myMessage);
-        }
+//        }
 
-        log.info("Waiting for all ActiveMQ JMS Messages to be consumed");
+        log.info("Waiting for all ActiveMQ JMS Messages to be consumed.");
         TimeUnit.SECONDS.sleep(3);
     }
 
