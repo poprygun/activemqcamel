@@ -1,5 +1,6 @@
-package io.microsamples.activemqcamel;
+package io.microsamples.queue;
 
+import io.microsamples.config.ActiveMQConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

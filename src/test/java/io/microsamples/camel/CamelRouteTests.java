@@ -1,6 +1,6 @@
 package io.microsamples.camel;
 
-import io.microsamples.activemqcamel.Run;
+import io.microsamples.Run;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.NotifyBuilder;
 import org.apache.camel.test.spring.CamelSpringBootRunner;
@@ -15,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(CamelSpringBootRunner.class)
 @SpringBootTest(classes = Run.class)
-public class SampleAmqApplicationTests {
+public class CamelRouteTests {
     @Autowired
     private CamelContext camelContext;
 

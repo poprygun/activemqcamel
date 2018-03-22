@@ -1,10 +1,10 @@
-package io.microsamples.activemqcamel;
+package io.microsamples.camel;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SampleAutowiredAmqRoute extends RouteBuilder {
+public class CamelRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {

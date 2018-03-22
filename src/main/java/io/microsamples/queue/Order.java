@@ -1,4 +1,4 @@
-package io.microsamples.activemqcamel;
+package io.microsamples.queue;
 
 import java.io.Serializable;
 import java.util.Date;

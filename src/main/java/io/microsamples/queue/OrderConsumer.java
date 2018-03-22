@@ -1,4 +1,4 @@
-package io.microsamples.activemqcamel;
+package io.microsamples.queue;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,17 +11,25 @@ import org.springframework.stereotype.Component;
 
 import javax.jms.Session;
 
-import static io.microsamples.activemqcamel.ActiveMQConfig.ORDER_QUEUE;
+import java.util.concurrent.CountDownLatch;
+
+import static io.microsamples.config.ActiveMQConfig.ORDER_QUEUE;
 
 @Component
 public class OrderConsumer {
 
     private static Logger log = LoggerFactory.getLogger(OrderConsumer.class);
 
+    Order received;
+    private CountDownLatch countDownLatch;
+
+
     @JmsListener(destination = ORDER_QUEUE)
     public void receiveMessage(@Payload Order order,
                                @Headers MessageHeaders headers,
                                Message message, Session session) {
+        received = order;
+
         log.info("received <" + order + ">");
 
         log.info("- - - - - - - - - - - - - - - - - - - - - - - -");
@@ -31,6 +39,14 @@ public class OrderConsumer {
         log.info("message: " + message);
         log.info("session: " + session);
         log.info("- - - - - - - - - - - - - - - - - - - - - - - -");
+
+        if(countDownLatch != null) {
+            countDownLatch.countDown();
+        }
+
     }
 
+    public void setCountDownLatch(CountDownLatch countDownLatch) {
+        this.countDownLatch = countDownLatch;
+    }
 }
