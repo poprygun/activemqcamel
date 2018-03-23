@@ -34,8 +34,7 @@ public class Run implements ApplicationRunner {
 //            orderSender.send(myMessage);
 //        }
 
-        log.info("Waiting for all ActiveMQ JMS Messages to be consumed.");
-        TimeUnit.SECONDS.sleep(3);
+//        TimeUnit.SECONDS.sleep(3);
     }
 
     public static void main(String[] args) throws Exception {
